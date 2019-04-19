@@ -9,6 +9,7 @@
   "author": "Abhijeet Jadhav",
   "license": "ISC",
   "dependencies": {
-    "mongodb": "^3.2.3"
+    "mongodb": "^3.2.3",
+    "mongoose": "^5.5.2"
   }
 }
