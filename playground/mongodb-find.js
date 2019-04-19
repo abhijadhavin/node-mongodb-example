@@ -32,6 +32,7 @@ MongoClient.connect(url, { useNewUrlParser: true }, function(err, client) {
 		console.log('Unable to fetch todos');
 	});
 	*/
+	/*
 	const col = client.db(dbName).collection('Users');
 	col.find({name:'Abhijeet'}).toArray().then((docs) => {
 		console.log('Todos');
@@ -39,5 +40,35 @@ MongoClient.connect(url, { useNewUrlParser: true }, function(err, client) {
 	}, (err) => {
 		console.log('Unable to fetch todos');
 	});
+	*/
+	//deleteMany
+	const col = client.db(dbName).collection('Users');
+	/*
+	col.deleteMany({text:'Eat Lunch'}).then((results) => {
+		console.log(results);		
+	}, (err) => {
+		console.log('Unable to Delete');
+	});
+	*/
+	//deleteOne
+	/*
+	col.deleteOne({text:'Something to do'}).then((results) => {
+		console.log(results);		
+	}, (err) => {
+		console.log('Unable to Delete');
+	});
+	*/
+	//findOneAndDelete
+	/*
+	col.findOneAndDelete({text:'Something to do'}).then((results) => {
+		console.log(results);		
+	}, (err) => {
+		console.log('Unable to Delete');
+	});
+	*/
+	const colUsers = client.db(dbName).collection('Users');
+	colUsers.deleteMany({name:'Abhijeet'});
+	colUsers.deleteOne({name:'Vilas'});
+	colUsers.findOneAndDelete({name:'Vinod'});
 	client.close();
 });
